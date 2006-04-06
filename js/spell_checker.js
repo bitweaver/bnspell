@@ -176,11 +176,11 @@ function ajaxSpell(varName, width, height, spellUrl, divId, name, id, title, val
 	currObj.actionSpan.id = "action";
 	if(currObj.config['useIcons'])
 	{
-		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\"><img src=\"" + currObj.config['imagePath'] + "images/spellcheck.png\" width=\"16\" height=\"16\" title=\"Check Spelling &amp; Preview\" alt=\"Check Spelling &amp; Preview\" border=\"0\" /></a>";
+		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\"><img src=\"" + currObj.config['imagePath'] + "images/spellcheck.png\" width=\"16\" height=\"16\" title=\"Check Spelling\" alt=\"Check Spelling\" border=\"0\" /></a>";
 	}
 	else
 	{
-		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\">Check Spelling &amp; Preview</a>";
+		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\">Check Spelling</a>";
 	}
 	currObj.controlPanelDiv.appendChild(currObj.actionSpan);
 	
@@ -305,11 +305,11 @@ function spellCheck() {
 	
 	if(currObj.config['useIcons'])
 	{
-		currObj.actionSpan.innerHTML = "<img src=\"" + currObj.config['imagePath'] + "images/spellcheck.png\" width=\"16\" height=\"16\" title=\"Check Spelling &amp; Preview\" alt=\"Check Spelling &amp; Preview\" border=\"0\" />";
+		currObj.actionSpan.innerHTML = "<img src=\"" + currObj.config['imagePath'] + "images/spellcheck.png\" width=\"16\" height=\"16\" title=\"Check Spelling\" alt=\"Check Spelling\" border=\"0\" />";
 	}
 	else
 	{
-		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\">Check Spelling &amp; Preview</a>";
+		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\">Check Spelling</a>";
 	}
 	
 	if(currObj.config['useIcons'])
@@ -713,11 +713,11 @@ function resetAction()
 	with(currObj);
 	if(currObj.config['useIcons'])
 	{
-		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\"><img src=\"" + currObj.config['imagePath'] + "images/spellcheck.png\" width=\"16\" height=\"16\" title=\"Check Spelling &amp; Preview\" alt=\"Check Spelling &amp; Preview\" border=\"0\" /></a>";
+		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\"><img src=\"" + currObj.config['imagePath'] + "images/spellcheck.png\" width=\"16\" height=\"16\" title=\"Check Spelling\" alt=\"Check Spelling\" border=\"0\" /></a>";
 	}
 	else
 	{
-		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\">Check Spelling &amp; Preview</a>";
+		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\">Check Spelling</a>";
 	}
 
 	currObj.statusSpan.innerHTML = "";
