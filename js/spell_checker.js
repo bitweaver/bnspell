@@ -102,14 +102,30 @@ function setupSpellCheckers()
 			tempSpellCheckers[numSpellCheckers] = textareas[i];
 			
 			//create a new spellchecker for this textarea
-			var tempWidth = tempSpellCheckers[numSpellCheckers].offsetWidth + 'px';
+            var tempWidth = (tempSpellCheckers[numSpellCheckers].offsetWidth+25) + 'px';
 			var tempHeight = tempSpellCheckers[numSpellCheckers].offsetHeight + 'px';
 			eval('spellCheckers' + numSpellCheckers + '= new ajaxSpell("spellCheckers' + numSpellCheckers + '", tempWidth, tempHeight, tempSpellCheckers[' + numSpellCheckers + '].getAttribute("accesskey"), "spellCheckDiv' + numSpellCheckers + '", tempSpellCheckers[' + numSpellCheckers + '].getAttribute("name"), tempSpellCheckers[' + numSpellCheckers + '].id, tempSpellCheckers[' + numSpellCheckers + '].title, tempSpellCheckers[' + numSpellCheckers + '].value);');
 			
 			numSpellCheckers++;
 		}
 	}
-	
+
+
+	var inputs = document.getElementsByTagName('input');
+    for (var i=0; i < inputs.length; i++) {
+        if (inputs[i].getAttribute("title") == "spellcheck" || inputs[i].getAttribute("title") == "spellcheck_icons")
+		{
+            tempSpellCheckers[numSpellCheckers] = inputs[i];
+            var tempWidth = (tempSpellCheckers[numSpellCheckers].offsetWidth+25) + 'px';
+            var tempHeight = tempSpellCheckers[numSpellCheckers].offsetHeight +
+'px';
+            eval('spellCheckers' + numSpellCheckers + '= new ajaxSpell("spellCheckers' + numSpellCheckers + '", tempWidth, tempHeight, tempSpellCheckers[' + numSpellCheckers + '].getAttribute("accesskey"), "spellCheckDiv' + numSpellCheckers + '", tempSpellCheckers[' + numSpellCheckers + '].getAttribute("name"), tempSpellCheckers[' + numSpellCheckers + '].id, tempSpellCheckers[' + numSpellCheckers
++ '].title, tempSpellCheckers[' + numSpellCheckers + '].value);');
+
+            numSpellCheckers++;
+        }
+    }
+
 }; // end setInit
 
 

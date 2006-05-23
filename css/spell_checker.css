@@ -1,4 +1,4 @@
-.spell_container .status				{color:#f00; padding-left:150px; white-space:nowrap;}
+.spell_container .status				{color:#f00; white-space:nowrap;}
 .spell_container .control_panel	{}
 .suggestion_box		{background-color:#f5f5f5; border:2px solid #ccc; position:absolute; padding:1em; margin-top:2em; text-align:left;}
 .suggestion_box .suggestion			{cursor:pointer; color:#090; text-decoration:underline;}
