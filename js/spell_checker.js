@@ -1,7 +1,7 @@
 /*************************************************************
  * AJAX Spell Checker - Version 2.8
  * (C) 2005 - Garrison Locke
- * 
+ *
  * This spell checker is built in the style of the Gmail spell
  * checker.  It uses AJAX to communicate with the backend without
  * requiring the page be reloaded.  If you use this code, please
@@ -11,27 +11,27 @@
  * Copyright (c) 2005, Garrison Locke
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without 
+ * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- *   * Redistributions of source code must retain the above copyright notice, 
+ *   * Redistributions of source code must retain the above copyright notice,
  *     this list of conditions and the following disclaimer.
- *   * Redistributions in binary form must reproduce the above copyright notice, 
- *     this list of conditions and the following disclaimer in the documentation 
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
  *     and/or other materials provided with the distribution.
- *   * Neither the name of the http://www.broken-notebook.com nor the names of its 
- *     contributors may be used to endorse or promote products derived from this 
+ *   * Neither the name of the http://www.broken-notebook.com nor the names of its
+ *     contributors may be used to endorse or promote products derived from this
  *     software without specific prior written permission.
  *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
- * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
- * IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
- * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
- * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
- * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
- * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
  * OF SUCH DAMAGE.
  *
  *************************************************************/
@@ -84,7 +84,7 @@ else
 /*************************************************************
  * function setupSpellCheckers()
  *
- * This function goes through the page and finds all the 
+ * This function goes through the page and finds all the
  * textareas.  It then checks the title attribute for either
  * spellcheck or spellcheck_icons to determine whether or not
  * it should add a spellchecker to that textarea.
@@ -100,12 +100,12 @@ function setupSpellCheckers()
 		if(textareas[i].getAttribute("title") == "spellcheck" || textareas[i].getAttribute("title") == "spellcheck_icons")
 		{
 			tempSpellCheckers[numSpellCheckers] = textareas[i];
-			
+
 			//create a new spellchecker for this textarea
             var tempWidth = (tempSpellCheckers[numSpellCheckers].offsetWidth+25) + 'px';
 			var tempHeight = tempSpellCheckers[numSpellCheckers].offsetHeight + 'px';
-			eval('spellCheckers' + numSpellCheckers + '= new ajaxSpell("spellCheckers' + numSpellCheckers + '", tempWidth, tempHeight, tempSpellCheckers[' + numSpellCheckers + '].getAttribute("accesskey"), "spellCheckDiv' + numSpellCheckers + '", tempSpellCheckers[' + numSpellCheckers + '].getAttribute("name"), tempSpellCheckers[' + numSpellCheckers + '].id, tempSpellCheckers[' + numSpellCheckers + '].title, tempSpellCheckers[' + numSpellCheckers + '].value);');
-			
+			eval('spellCheckers' + numSpellCheckers + '= new ajaxSpell("spellCheckers' + numSpellCheckers + '", tempWidth, tempHeight, tempSpellCheckers[' + numSpellCheckers + '].getAttribute("accesskey"), "spellCheckDiv' + numSpellCheckers + '", tempSpellCheckers[' + numSpellCheckers + '].getAttribute("name"), tempSpellCheckers[' + numSpellCheckers + '].id, tempSpellCheckers[' + numSpellCheckers + '].title, tempSpellCheckers[' + numSpellCheckers + '].value, "");');
+
 			numSpellCheckers++;
 		}
 	}
@@ -117,17 +117,15 @@ function setupSpellCheckers()
 		{
             tempSpellCheckers[numSpellCheckers] = inputs[i];
             var tempWidth = (tempSpellCheckers[numSpellCheckers].offsetWidth+25) + 'px';
-            var tempHeight = tempSpellCheckers[numSpellCheckers].offsetHeight +
-'px';
+            var tempHeight = tempSpellCheckers[numSpellCheckers].offsetHeight + 'px';
             eval('spellCheckers' + numSpellCheckers + '= new ajaxSpell("spellCheckers' + numSpellCheckers + '", tempWidth, tempHeight, tempSpellCheckers[' + numSpellCheckers + '].getAttribute("accesskey"), "spellCheckDiv' + numSpellCheckers + '", tempSpellCheckers[' + numSpellCheckers + '].getAttribute("name"), tempSpellCheckers[' + numSpellCheckers + '].id, tempSpellCheckers[' + numSpellCheckers
-+ '].title, tempSpellCheckers[' + numSpellCheckers + '].value);');
++ '].title, tempSpellCheckers[' + numSpellCheckers + '].value, " textinput");');
 
             numSpellCheckers++;
         }
     }
 
 }; // end setInit
-
 
 /*************************************************************
  * ajaxSpell(varName, width, height, spellUrl, divId, name, id)
@@ -141,12 +139,12 @@ function setupSpellCheckers()
  * @param width The width of the spell checker
  * @param height The height of the spell checker
  * @param spellUrl The url of the spell_checker.php code
- * @param divId The id of the div that the spell checker is 
+ * @param divId The id of the div that the spell checker is
  *              contained in (must be unique)
  * @param name The name of the textarea form element
  * @param id The id of the spell checker textarea (must be unique)
  *************************************************************/
-function ajaxSpell(varName, width, height, spellUrl, divId, name, id, title, value)
+function ajaxSpell(varName, width, height, spellUrl, divId, name, id, title, value, inputType)
 {
 	currObj = this;
 
@@ -162,30 +160,30 @@ function ajaxSpell(varName, width, height, spellUrl, divId, name, id, title, val
 	currObj.config['value']      = value;               //the value of the text box when the page was loaded
 
 	currObj.config['imagePath'] = spellUrl.substring(0, spellUrl.lastIndexOf("/")+1);
-	
+
 	currObj.config['value']      = currObj.config['value'].replace(/<br *\/?>/gi, "\n");
-	
+
 	currObj.config['useIcons'] = false;
-	
+
 	if(currObj.config['title'] == "spellcheck_icons")
 	{
 		currObj.config['useIcons'] = true;
 	}
-	
+
 	spellContainer = document.createElement('DIV');
 	spellContainer.id = currObj.config['divId'];
-	spellContainer.className = 'spell_container';
+	spellContainer.className = 'spell_container' + inputType;
 	spellContainer.style.width = currObj.config['width'];
 
 	oldElement = document.getElementById(currObj.config['id']);
 
 	oldElement.parentNode.replaceChild(spellContainer, oldElement);
-	
+
 	//generate the div to hold the spell checker controls
 	currObj.controlPanelDiv = document.createElement('DIV');
 	currObj.controlPanelDiv.className = 'control_panel';
 	document.getElementById(currObj.config['divId']).appendChild(currObj.controlPanelDiv);
-	
+
 	//the span that toggles between spell checking and editing
 	currObj.actionSpan = document.createElement('SPAN');
 	currObj.actionSpan.className = "action";
@@ -199,21 +197,21 @@ function ajaxSpell(varName, width, height, spellUrl, divId, name, id, title, val
 		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".spellCheck();\">Check Spelling</a>";
 	}
 	currObj.controlPanelDiv.appendChild(currObj.actionSpan);
-	
+
 	//the span that lets the user know of the status of the spell checker
 	currObj.statusSpan = document.createElement('SPAN');
 	currObj.statusSpan.className = "status";
 	currObj.statusSpan.id = "status";
 	currObj.statusSpan.innerHTML = "";
 	currObj.controlPanelDiv.appendChild(currObj.statusSpan);
-	
+
 	//the textarea to be spell checked
 	oldElement.value = currObj.config['value'];
 	document.getElementById(currObj.config['divId']).appendChild(oldElement);
-	
+
 	currObj.objToCheck              = document.getElementById(currObj.config['id']);      //the actual object we're spell checking
 	currObj.spellingResultsDiv      = null;                                               // Auto-generated results div
-		
+
 	//prototypes for the ajaxSpell objects
 	ajaxSpell.prototype.spellCheck           = spellCheck;
 	ajaxSpell.prototype.spellCheck_cb        = spellCheck_cb;
@@ -250,7 +248,7 @@ function setCurrentObject(obj)
  * to contain the markedup misspelled data and changes the status
  * message.  It also sets the width and height of the results
  * div to match the element that's being checked.
- * If there are no misspellings then new_data is the empty 
+ * If there are no misspellings then new_data is the empty
  * string and the status is set to "No Misspellings Found".
  *
  * @param new_data The marked up misspelled data returned from php.
@@ -261,22 +259,22 @@ function spellCheck_cb(new_data)
 	new_data = new_data.toString();
 	var isThereAMisspelling = new_data.charAt(0);
 	new_data = new_data.substring(1);
-		
+
 	if(currObj.spellingResultsDiv)
 	{
 		currObj.spellingResultsDiv.parentNode.removeChild(spellingResultsDiv);
 	}
-	
+
 	currObj.spellingResultsDiv = document.createElement('DIV');
 	currObj.spellingResultsDiv.className = 'edit_box';
 	currObj.spellingResultsDiv.style.width = currObj.objToCheck.style.width;
 	currObj.spellingResultsDiv.style.height = currObj.objToCheck.style.height;
 	currObj.spellingResultsDiv.innerHTML = new_data;
-	
+
 	currObj.objToCheck.style.display = "none";
 	currObj.objToCheck.parentNode.insertBefore(currObj.spellingResultsDiv,currObj.objToCheck);
 	currObj.statusSpan.innerHTML = "";
-	
+
 	if(currObj.config['useIcons'])
 	{
 		currObj.actionSpan.innerHTML = "<a class=\"resume_editing\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".resumeEditing();\"><img src=\"" + currObj.config['imagePath'] + "images/page_white_edit.png\" width=\"16\" height=\"16\" title=\"Resume Editing\" alt=\"Resume Editing\" border=\"0\" /></a>";
@@ -285,7 +283,7 @@ function spellCheck_cb(new_data)
 	{
 		currObj.actionSpan.innerHTML = "<a class=\"resume_editing\" onclick=\"setCurrentObject(" + currObj.config['varName'] + "); " + currObj.config['varName'] + ".resumeEditing();\">Resume Editing</a>";
 	}
-		
+
 	if(isThereAMisspelling != "1")
 	{
 		if(currObj.config['useIcons'])
@@ -312,13 +310,13 @@ function spellCheck_cb(new_data)
 function spellCheck() {
 	with(currObj);
 	var query;
-	
+
 	if(currObj.spellingResultsDiv)
 	{
 		currObj.spellingResultsDiv.parentNode.removeChild(currObj.spellingResultsDiv);
 		currObj.spellingResultsDiv = null;
 	}
-	
+
 	if(currObj.config['useIcons'])
 	{
 		currObj.actionSpan.innerHTML = "<img src=\"" + currObj.config['imagePath'] + "images/spellcheck.png\" width=\"16\" height=\"16\" title=\"Check Spelling\" alt=\"Check Spelling\" border=\"0\" />";
@@ -327,7 +325,7 @@ function spellCheck() {
 	{
 		currObj.actionSpan.innerHTML = "<a class=\"check_spelling\">Check Spelling</a>";
 	}
-	
+
 	if(currObj.config['useIcons'])
 	{
 		currObj.statusSpan.innerHTML = "<img src=\"" + currObj.config['imagePath'] + "images/working.gif\" width=\"16\" height=\"16\" title=\"Checking...\" alt=\"Checking...\" border=\"0\" />";
@@ -338,7 +336,7 @@ function spellCheck() {
 	}
 	query = currObj.objToCheck.value;
 	query = query.replace(/\r?\n/gi, "<br />");
-	
+
 	cp.call(currObj.config['spellUrl'], 'spellCheck', spellCheck_cb, query, currObj.config['varName']);
 }; // end spellcheck
 
@@ -355,15 +353,15 @@ function spellCheck() {
 function addWord(id)
 {
 	var wordToAdd = document.getElementById(id).innerHTML;
-	
+
 	with(currObj);
-	
+
 	if(spellingSuggestionsDiv)
 	{
 		spellingSuggestionsDiv.parentNode.removeChild(spellingSuggestionsDiv);
 		spellingSuggestionsDiv = null;
 	}
-	
+
 	if(currObj.config['useIcons'])
 	{
 		currObj.statusSpan.innerHTML = "<img src=\"" + currObj.config['imagePath'] + "images/working.gif\" width=\"16\" height=\"16\" title=\"Adding Word...\" alt=\"Adding Word...\" border=\"0\" />";
@@ -372,7 +370,7 @@ function addWord(id)
 	{
 		currObj.statusSpan.innerHTML = "Adding Word...";
 	}
-	
+
 	cp.call(currObj.config['spellUrl'], 'addWord', addWord_cb, wordToAdd);
 
 }; // end addWord
@@ -424,7 +422,7 @@ function checkClickLocation(e)
 		else
 		{
 			var theTarget = getTarget(e);
-			
+
 			if(theTarget != spellingSuggestionsDiv)
 			{
 				spellingSuggestionsDiv.parentNode.removeChild(spellingSuggestionsDiv);
@@ -432,7 +430,7 @@ function checkClickLocation(e)
 			}
 		}
 	}
-	
+
 	return true; // Allow other handlers to continue.
 }; //end checkClickLocation
 
@@ -507,14 +505,14 @@ function checkBrowser()
 		else
 		{
 			return "netscape";
-		} 
+		}
 	}
 	else if(theAgent.indexOf(' ') != -1)
 	{
 		return navigator.userAgent.substr(0,theAgent.indexOf(' '));
 	}
 	else
-	{ 
+	{
 		return navigator.userAgent;
 	}
 }; // end checkBrowser
@@ -524,7 +522,7 @@ function checkBrowser()
  * showSuggestions_cb
  *
  * The showSuggestions_cb function is a callback function that
- * php's showSuggestions function returns to.  It sets the 
+ * php's showSuggestions function returns to.  It sets the
  * suggestions table to contain the new data and then displays
  * the suggestions div.  It also clears the status message.
  *
@@ -546,7 +544,7 @@ function showSuggestions_cb(new_data)
  * function to get suggestions for the misspelled word that the
  * user has clicked on.  It sets the status to "Searching...",
  * hides the suggestions div, finds the x and y position of the
- * span containing the misspelled word that user clicked on so 
+ * span containing the misspelled word that user clicked on so
  * the div can be displayed in the correct location, and then
  * calls the showSuggestions php function with the misspelled word
  * and the id of the span containing it.
@@ -567,7 +565,7 @@ function showSuggestions(word, id)
 	}
 	var x = findPosXById(id);
 	var y = findPosYById(id);
-	
+
 	var scrollPos = 0;
 	if(checkBrowser() != "ie")
 	{
@@ -584,15 +582,15 @@ function showSuggestions(word, id)
 	spellingSuggestionsDiv.style.position = 'absolute';
 	spellingSuggestionsDiv.style.left = x + 'px';
 	spellingSuggestionsDiv.style.top = (y+16-scrollPos) + 'px';
-	
+
 	// Bah. There's got to be a better way to deal with this, but the click
 	// on a word to get suggestions starts up a race condition between
 	// showing and hiding the suggestion box, so we'll ignore the first
 	// click.
 	spellingSuggestionsDiv.ignoreNextClick = true;
-	
+
 	document.body.appendChild(spellingSuggestionsDiv);
-	
+
 	cp.call(currObj.config['spellUrl'], 'showSuggestions', showSuggestions_cb, word, id);
 }; // end showSuggestions
 
@@ -653,7 +651,7 @@ function switchText()
  *
  * The switchText_cb function is a call back funtion that the
  * switchText php function returns to.  I replace all the %u2026's
- * with returns.  It then replaces the text in the text box with 
+ * with returns.  It then replaces the text in the text box with
  * the corrected text fromt he div.
  *
  * @param new_string The corrected text from the div.
@@ -707,13 +705,13 @@ function resumeEditing()
 	{
 		currObj.statusSpan.innerHTML = "Working...";
 	}
-	
+
 	if(spellingSuggestionsDiv)
 	{
 		spellingSuggestionsDiv.parentNode.removeChild(spellingSuggestionsDiv);
 		spellingSuggestionsDiv = null;
 	}
-	
+
 	currObj.switchText();
 }; // end resumeEditing
 
@@ -750,11 +748,11 @@ function resetSpellChecker()
 {
 	with(currObj);
 	currObj.resetAction();
-	
+
 	currObj.objToCheck.value = "";
 	currObj.objToCheck.style.display = "block";
 	currObj.objToCheck.disabled = false;
-	
+
 	if(currObj.spellingResultsDiv)
 	{
 		currObj.spellingResultsDiv.parentNode.removeChild(currObj.spellingResultsDiv);
@@ -766,7 +764,7 @@ function resetSpellChecker()
 		spellingSuggestionsDiv = null;
 	}
 	currObj.statusSpan.style.display = "none";
-	
+
 }; // end resetSpellChecker
 
 
@@ -776,7 +774,7 @@ function resetSpellChecker()
  * The findPosX function just finds the X offset of the top left
  * corner of the object id it's given.
  *
- * @param object The id of the object that you want to find the 
+ * @param object The id of the object that you want to find the
  *               upper left X coordinate of.
  * @return int The X coordinate of the object
  *************************************************************/
@@ -806,7 +804,7 @@ function findPosXById(object)
  * The findPosY function just finds the Y offset of the top left
  * corner of the object id it's given.
  *
- * @param object The id of the object that you want to find the 
+ * @param object The id of the object that you want to find the
  *               upper left Y coordinate of.
  * @return int The Y coordinate of the object
  *************************************************************/

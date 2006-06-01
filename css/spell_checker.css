@@ -10,3 +10,5 @@
 .spell_container .highlight			{color:#f00; text-decoration:underline; cursor:pointer;}
 .spell_container .check_spelling		{color:#06c; text-decoration:underline; cursor:pointer;}
 .spell_container .resume_editing		{color:#093; text-decoration:underline; cursor:pointer;}
+
+.spell_container.textinput .edit_box			{background-color:#f5fff5; color:#000; border:1px solid #ccc; overflow:visible;}
