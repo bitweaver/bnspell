@@ -96,6 +96,7 @@
 
 
 
+{literal}
 <script type="text/javascript">
 window.onload = function() {
 	var elemSpan = document.createElement("span");
@@ -124,6 +125,7 @@ window.onload = function() {
   span.spanHighElement{ background: #000040; color: white; cursor: pointer; }
   span.noMatchData{ font-weight: bold; color: #0000FF; }
 </style>
+{/literal}
 
 
 <form name="Form1" autocomplete="off" id="Form1">
