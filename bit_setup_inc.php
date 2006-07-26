@@ -1,5 +1,4 @@
 <?php
-global $gBitSystem;
 $registerHash = array(
 	'package_name' => 'bnspell',
 	'package_path' => dirname( __FILE__ ).'/',
