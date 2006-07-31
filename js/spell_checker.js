@@ -268,7 +268,13 @@ function spellCheck_cb(new_data)
 	currObj.spellingResultsDiv = document.createElement('DIV');
 	currObj.spellingResultsDiv.className = 'edit_box';
 	currObj.spellingResultsDiv.style.width = currObj.objToCheck.style.width;
+	if ( currObj.spellingResultsDiv.style.width < 1) {
+		currObj.spellingResultsDiv.style.width = currObj.objToCheck.offsetWidth;
+	}
 	currObj.spellingResultsDiv.style.height = currObj.objToCheck.style.height;
+	if ( currObj.spellingResultsDiv.style.height < 1) {
+		currObj.spellingResultsDiv.style.height = currObj.objToCheck.offsetHeight;
+	}
 	currObj.spellingResultsDiv.innerHTML = new_data;
 
 	currObj.objToCheck.style.display = "none";
