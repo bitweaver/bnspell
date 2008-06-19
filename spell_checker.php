@@ -1,4 +1,14 @@
 <?php
+/**
+ * @version $Header: /cvsroot/bitweaver/_bit_bnspell/spell_checker.php,v 1.2 2008/06/19 04:32:34 lsces Exp $
+ *
+ * Copyright (c) 2005, Garrison Locke
+ * @author Garrison Locke
+ * 
+ * @package bnspell
+ * @subpackage functions
+ */
+
 /**********************************************************************************************
  * AJAX Spell Checker - Version 2.8
  * (C) 2005 - Garrison Locke

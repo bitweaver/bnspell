@@ -1,5 +1,10 @@
 <?php
 /**
+ * @version $Header: /cvsroot/bitweaver/_bit_bnspell/pspell_comp.php,v 1.2 2008/06/19 04:32:34 lsces Exp $
+ *
+ * @package bnspell
+ * @subpackage functions
+ *
  * pspell compatibility wrapper
  *
  * This library provides some of the functions from the pspell PHP extension
