@@ -1,29 +1,29 @@
 <?php
 /** 
-* The content of this file is (c) 2003-2005 digital media center GmbH
-* All rights reserved
-*
-* a JSON parser / generator.
-* implemented as 100% compatible port of the original JSON parser
-* by Douglas Crockford on http://www.JSON.org.
-*
-* @package      JSON
-* @access       public
-* @copyright    Copyright (c) 2005-2006 Dominique Stender - http://sf.net/projects/cpaint
-* @license      http://www.crockford.com/JSON/license.html
-* @author       Dominique Stender <dstender@st-webdevelopment.de>
-* @version      $Id: json.php,v 1.1 2006/04/06 16:03:55 bitweaver Exp $
-*/
+ * @version      $Header: /cvsroot/bitweaver/_bit_bnspell/cpaint/json.php,v 1.2 2008/06/19 06:40:35 lsces Exp $
+ * The content of this file is (c) 2003-2005 digital media center GmbH
+ * All rights reserved
+ *
+ * a JSON parser / generator.
+ * implemented as 100% compatible port of the original JSON parser
+ * by Douglas Crockford on http://www.JSON.org.
+ *
+ * @package      JSON
+ * @access       public
+ * @copyright    Copyright (c) 2005-2006 Dominique Stender - http://sf.net/projects/cpaint
+ * @license      http://www.crockford.com/JSON/license.html
+ * @author       Dominique Stender <dstender@st-webdevelopment.de>
+ */
 
   
   
-  /**
-  * a JSON parser / generator
-  * 
-  * @access public
-  * @author Dominique Stender <dst@dmc.de>
-  * @version 1.0.1
-  */
+/**
+ * a JSON parser / generator
+ * 
+ * @access public
+ * @author Dominique Stender <dst@dmc.de>
+ * @package      JSON
+ */
   class JSON {
     /**
     * line counter

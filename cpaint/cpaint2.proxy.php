@@ -7,10 +7,13 @@
 * released under the terms of the GPL
 * see http://www.fsf.org/licensing/licenses/gpl.txt for details
 * 
-* $Id: cpaint2.proxy.php,v 1.1 2006/04/06 16:03:55 bitweaver Exp $
+* $Id: cpaint2.proxy.php,v 1.2 2008/06/19 06:40:35 lsces Exp $
 * $Log: cpaint2.proxy.php,v $
-* Revision 1.1  2006/04/06 16:03:55  bitweaver
-* Initial revision
+* Revision 1.2  2008/06/19 06:40:35  lsces
+* phpdoc comment tweeks
+*
+* Revision 1.1.1.1  2006/04/06 16:03:55  bitweaver
+* first import of ajax + pspell spell checking service
 *
 * Revision 1.5  2005/07/20 17:25:14  saloon12yrd
 * updated file headers to contain proper licensing information as well as @package info
@@ -31,10 +34,10 @@
 */
 
 //---- includes ----------------------------------------------------------------
-	/**
-	*	@include config
-	*/
-	require_once("cpaint2.config.php");
+/**
+ * include config
+ */
+require_once("cpaint2.config.php");
 	
 //---- main code ---------------------------------------------------------------
 

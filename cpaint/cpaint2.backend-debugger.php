@@ -1,17 +1,17 @@
 <?php
-/* 
- CPAINT Backend Debug Interface
-
- released under the terms of the GPL
- see http://www.fsf.org/licensing/licenses/gpl.txt for details
- 
- @package    CPAINT
- @access     public
- @author     Paul Sullivan  <wiley14@gmail.com>
- @author     Stephan Tijink <stijink@googlemail.com>
- @copyright  Copyright (c) 2005-2006 Paul Sullivan - http://sf.net/projects/cpaint 
- @version    2.0.2
-*/
+/**
+ * @version    $Header: /cvsroot/bitweaver/_bit_bnspell/cpaint/cpaint2.backend-debugger.php,v 1.3 2008/06/19 06:40:35 lsces Exp $
+ * CPAINT Backend Debug Interface
+ *
+ * released under the terms of the GPL
+ * see http://www.fsf.org/licensing/licenses/gpl.txt for details
+ *
+ * @package    CPAINT
+ * @access     public
+ * @author     Paul Sullivan  <wiley14@gmail.com>
+ * @author     Stephan Tijink <stijink@googlemail.com>
+ * @copyright  Copyright (c) 2005-2006 Paul Sullivan - http://sf.net/projects/cpaint 
+ */
 
 if (!(isset($_GET["cpaint_function"]) || isset($_POST["cpaint_function"]))) {
 	$debug_html_start = '
