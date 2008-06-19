@@ -1,6 +1,6 @@
 <?php
 /**
- * @version $Header: /cvsroot/bitweaver/_bit_bnspell/pspell_comp.php,v 1.2 2008/06/19 04:32:34 lsces Exp $
+ * @version $Header: /cvsroot/bitweaver/_bit_bnspell/pspell_comp.php,v 1.3 2008/06/19 06:11:10 lsces Exp $
  *
  * @package bnspell
  * @subpackage functions
@@ -47,6 +47,9 @@
  * OF SUCH DAMAGE.
  */
 
+/**
+ * Initialize
+ */
 error_log("Using pspell_comp");
 
 if(!defined('ASPELL_BIN')) define('ASPELL_BIN','aspell');
@@ -79,6 +82,7 @@ function pspell_suggest(&$dict, $word){
  * Class to provide pspell functionality through aspell
  *
  * Needs PHP >= 4.3.0
+ * @package bnspell
  */
 class Pspell{
     var $language;

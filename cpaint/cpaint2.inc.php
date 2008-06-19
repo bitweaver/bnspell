@@ -11,17 +11,17 @@
 * @author     Paul Sullivan <wiley14@gmail.com>
 * @author     Dominique Stender <dstender@st-webdevelopment.de>
 * @copyright  Copyright (c) 2005-2006 Paul Sullivan, Dominique Stender - http://sf.net/projects/cpaint
-* @version    $Id: cpaint2.inc.php,v 1.1 2006/04/06 16:03:55 bitweaver Exp $
+* @version    $Id: cpaint2.inc.php,v 1.2 2008/06/19 06:11:10 lsces Exp $
 */
   
 //---- includes ----------------------------------------------------------------
   /**
-  * @include JSON
+  * include JSON
   */
   require_once(dirname(__FILE__) . '/json.php');
 	
   /**
-  *	@include config
+  *	include config
   */
   require_once("cpaint2.config.php");
 
@@ -565,7 +565,7 @@
     /**
     * PHP4 constructor.
     *
-    * @package  CPAINT
+    * package  CPAINT
     * @access   public
     * @return   void
     */

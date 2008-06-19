@@ -68,6 +68,9 @@ if (!(isset($_GET["cpaint_function"]) || isset($_POST["cpaint_function"]))) {
 	die();
 }
 
+/**
+ * getCallableCode
+ */
 function getCallableCode() {
 	$scriptName = $_SERVER['SCRIPT_FILENAME'];
 	$fileLines = file($scriptName);

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version $Header: /cvsroot/bitweaver/_bit_bnspell/spell_checker.php,v 1.2 2008/06/19 04:32:34 lsces Exp $
+ * @version $Header: /cvsroot/bitweaver/_bit_bnspell/spell_checker.php,v 1.3 2008/06/19 06:11:10 lsces Exp $
  *
  * Copyright (c) 2005, Garrison Locke
  * @author Garrison Locke
@@ -413,7 +413,7 @@ function remove_word_junk($t)
  * box from the div.  The comments are removed and breaks are
  * converted back into \n's.  All the html tags that the user
  * might have entered that aren't on the approved list:
- * <p><br><a><b><strong><i><small><ul><li> are stripped out.
+ * <p><br><a>&lt;b><strong><i><small><ul><li> are stripped out.
  * The user-entered returns have already been replaced with
  * $u2026 so that they can be preserved.  I replace all the 
  * \n's that might have been added by the browser (Firefox does
