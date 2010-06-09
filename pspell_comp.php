@@ -1,6 +1,6 @@
 <?php
 /**
- * @version $Header: /cvsroot/bitweaver/_bit_bnspell/pspell_comp.php,v 1.3 2008/06/19 06:11:10 lsces Exp $
+ * @version $Header$
  *
  * @package bnspell
  * @subpackage functions

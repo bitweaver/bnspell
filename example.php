@@ -1,6 +1,6 @@
 <?php
 /**
- * @version $Header: /cvsroot/bitweaver/_bit_bnspell/example.php,v 1.6 2010/02/08 21:27:21 wjames5 Exp $
+ * @version $Header$
  *
  * Copyright (c) 2005, Garrison Locke
  * @author Garrison Locke

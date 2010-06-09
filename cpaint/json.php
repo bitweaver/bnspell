@@ -1,6 +1,6 @@
 <?php
 /** 
- * @version      $Header: /cvsroot/bitweaver/_bit_bnspell/cpaint/json.php,v 1.2 2008/06/19 06:40:35 lsces Exp $
+ * @version      $Header$
  * The content of this file is (c) 2003-2005 digital media center GmbH
  * All rights reserved
  *

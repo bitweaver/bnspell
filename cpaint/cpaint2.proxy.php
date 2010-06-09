@@ -7,8 +7,8 @@
 * released under the terms of the GPL
 * see http://www.fsf.org/licensing/licenses/gpl.txt for details
 * 
-* $Id: cpaint2.proxy.php,v 1.2 2008/06/19 06:40:35 lsces Exp $
-* $Log: cpaint2.proxy.php,v $
+* $Id$
+* $Log$
 * Revision 1.2  2008/06/19 06:40:35  lsces
 * phpdoc comment tweeks
 *

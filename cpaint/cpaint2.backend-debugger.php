@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    $Header: /cvsroot/bitweaver/_bit_bnspell/cpaint/cpaint2.backend-debugger.php,v 1.3 2008/06/19 06:40:35 lsces Exp $
+ * @version    $Header$
  * CPAINT Backend Debug Interface
  *
  * released under the terms of the GPL

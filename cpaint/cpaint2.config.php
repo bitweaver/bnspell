@@ -7,8 +7,8 @@
 * released under the terms of the GPL
 * see http://www.fsf.org/licensing/licenses/gpl.txt for details
 * 
-* $Id: cpaint2.config.php,v 1.1 2006/04/06 16:03:55 bitweaver Exp $
-* $Log: cpaint2.config.php,v $
+* $Id$
+* $Log$
 * Revision 1.1  2006/04/06 16:03:55  bitweaver
 * Initial revision
 *
