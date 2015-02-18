@@ -25,10 +25,10 @@
 {/form}
 
 {*
-  <script src="{$smarty.const.UTIL_PKG_URL}javascript/libs/scriptaculous/lib/prototype.js" type="text/javascript"></script>
-  <script src="{$smarty.const.UTIL_PKG_URL}javascript/libs/scriptaculous/effects.js" type="text/javascript"></script>
-  <script src="{$smarty.const.UTIL_PKG_URL}javascript/libs/scriptaculous/dragdrop.js" type="text/javascript"></script>
-  <script src="{$smarty.const.UTIL_PKG_URL}javascript/libs/scriptaculous/controls.js" type="text/javascript"></script>
+  <script src="{$smarty.const.UTIL_PKG_URL}javascript/scriptaculous/lib/prototype.js" type="text/javascript"></script>
+  <script src="{$smarty.const.UTIL_PKG_URL}javascript/scriptaculous/effects.js" type="text/javascript"></script>
+  <script src="{$smarty.const.UTIL_PKG_URL}javascript/scriptaculous/dragdrop.js" type="text/javascript"></script>
+  <script src="{$smarty.const.UTIL_PKG_URL}javascript/scriptaculous/controls.js" type="text/javascript"></script>
 
   <script src="/scripts/controls.js" type="text/javascript"></script>
   <style type="text/css">
