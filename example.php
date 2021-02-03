@@ -12,7 +12,7 @@
 /**
  * Initialize
  */
-require_once( '../kernel/setup_inc.php' );
+require_once( '../kernel/includes/setup_inc.php' );
 
 $gBitSystem->display( 'bitpackage:bnspell/bnspell_example.tpl' , NULL, array( 'display_mode' => 'display' ));
 
